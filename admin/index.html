@@ -1,0 +1,99 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-cn" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>用有趣的心发现生活的美</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="用有趣的心发现生活的美" />
+
+    <!--<link href="/resource/css/bootstrap.css?0.04" rel="stylesheet" />-->
+    <link href="/resource/css/bootstrap-cerulean-3.3.6.min.css?0.04" rel="stylesheet" />
+
+    <link href="/resource/css/reset.css" rel="stylesheet" />
+    <link href="/resource/css/new-base.css?0.04" rel="stylesheet" />
+    <link href="/resource/css/bootstrap-theme.css?0.04" rel="stylesheet" />
+    <!--<link href="/resource/css/bootstrap-datetimepicker.css?0.04" rel="stylesheet" />-->
+
+    <script type="text/javascript" src="/resource/js/basicComponents/angular.min.js?0.04"></script>
+    <script type="text/javascript" src="/resource/js/basicComponents/angular-ui-router.js?1.0242"></script>
+    <script type="text/javascript" src="/resource/js/basicComponents/angular-sanitize.js?0.04"></script>
+    <script type="text/javascript" src="/resource/js/basicComponents/angular.cookie.js?0.04"></script>
+    <script type="text/javascript" src="/resource/js/basicComponents/bindonce.js?0.04"></script>
+    <script type="text/javascript" src="/resource/js/basicComponents/angular-touch.js?0.04"></script>
+    <script type="text/javascript" src="/resource/js/basicComponents/ui-bootstrap-tpls-1.3.1.js?0.04"></script>
+    <script type="text/javascript" src="/resource/js/basicComponents/angular-locale_zh-cn.js?0.04"></script>
+    <script type="text/javascript" src="/resource/js/basicComponents/qiniu/qiniu.js?0.30"></script>
+    <script type="text/javascript" src="/resource/js/basicComponents/qiniu/plupload.full.min.js?0.30"></script>
+    <!--<script type="text/javascript" src="/resource/js/method/base.js?0.04"></script>-->
+    <!--<script type="text/javascr  ipt" src="/resource/js/basicComponents/angular-date-binder.js?0.04"></script>-->
+    <!--<script type="text/javascript" src="/resource/js/basicComponents/fastclick.js?0.04"></script>-->
+    <!--<script type="text/javascript" src="/resource/js/basicComponents/angular-carousel.js?0.04"></script>-->
+    <!--<script type="text/javascript" src="/resource/js/basicComponents/angular-lazy-img.js?0.04"></script>-->
+
+    <script type="text/javascript" src="/resource/js/method/app.js?0.04"></script>
+    <script type="text/javascript" src="/resource/js/method/controllers.js?0.04"></script>
+    <script type="text/javascript" src="/resource/js/method/directive.js?0.04"></script>
+    <script type="text/javascript" src="/resource/js/method/factory.js?0.04"></script>
+    <script type="text/javascript" src="/resource/js/method/filter.js?0.04"></script>
+    <script type="text/javascript" src="/resource/js/method/service.js?0.04"></script>
+
+    <!--<link href="/resource/css/all.min.css?0.04" rel="stylesheet" />-->
+    <!--<script src="/resource/js/app.all.min.js?0.04"></script>-->
+
+</head>
+<body ng-controller="mainController">
+<div class="wrap" id="wrap">
+    <div class="header">
+        <div class="logo">后台管理系统</div>
+        <div class="userCont">
+            <div class="userHandle" ng-click="setOption()">
+                <div class="pic"><img src="resource/images/avatar.png" alt=""/></div>
+                <div class="cont">
+                    <p>欢迎您，</p>
+                    <p>张三</p>
+                </div>
+                <i class="icon-caret"></i>
+            </div>
+            <div class="userOpCont" ng-if="userOpCont">
+                <ul>
+                    <li><a href="">设置</a></li>
+                    <li><a href="">密码修改</a></li>
+                    <li><a href="">退出</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- header end -->
+
+    <div class="content cf">
+        <div class="slide">
+            <div class="menu">
+                <ul class="parentUl">
+                    <li class="parentLi" ng-repeat="item in menuList" ng-class="{'on':$index===slideIndex}" ng-init="pIndex = $index">
+                        <a href="{{item.isChild?'javascript:;':'#'+item.path}}" class="item" ng-click="goPath(item.children,$index)">
+                            <i class="icon" ng-class="{'icon-right':item.isChild && $index===slideIndex,'icon-down':item.isChild && $index!==slideIndex}"></i>{{::item.name}}
+                        </a>
+                        <div class="subMenu" ng-if="item.isChild && $index===slideIndex">
+                            <ul class="childrenUl">
+                                <li class="childrenLi" ng-repeat="subItem in item.children" ng-class="{'on':$index === slideSubItemIndex}">
+                                    <a class="subItem" href="#{{::subItem.path}}" ng-click="goSubPath(pIndex,$index)">{{::subItem.name}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!--<li class="on"><a href="javascript:;" class="on">订单列表</a></li>-->
+                    <!--<li><a href="javascript:;">退款列表</a></li>-->
+                </ul>
+            </div>
+        </div>
+
+        <div class="main">
+            <div ui-view="appState" class="app-state"></div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

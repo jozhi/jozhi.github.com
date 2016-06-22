@@ -1,0 +1,49 @@
+<div down-app></div>
+
+<div class="detailPages cf">
+    <div class="header-pic">
+        <img ng-src="{{goodsItem.image}}" alt="" ng-style="{{detailsHeight}}" />
+    </div>
+    <h2 class="title">{{goodsItem.title}}</h2>
+    <div class="part" ng-repeat="item in goodsItem.contents">
+        <h1 class="title" ng-if="item.type === 2">{{item.value}}</h1>
+        <p class="subTitle" ng-if="item.type === 1"><span class="index">{{item.order}}</span> <span class="cont">{{item.value}}</span></p>
+        <p class="paragraph" ng-if="item.type === 3" ng-class="{'quoted':item.hasDescriptionQuote}">{{item.value}}</p>
+        <div class="detail-pic" ng-if="item.type === 4" ng-class="{'focused':item.hasImageBox}">
+            <p class="description" ng-if="item.imageDescription" ng-bind="item.imageDescription"></p>
+            <div class="img-wrap">
+                <img lazy-img="{{item.value}}" alt="" class="inner beforeLoading"/>
+            </div>
+        </div>
+        <div class="moreInfo cf" ng-if="item.type === 5">
+            <a ng-href="{{item.value}}" class="goShopping">直达链接</a>
+            <span class="price">
+                <span>￥</span><span>{{item.price}}</span>
+                <span class="priceRange" ng-if="item.hasPriceRange">起</span>
+            </span>
+        </div>
+        <div class="br" ng-if="item.type === 6"></div>
+    </div>
+
+    <div class="goods-comment cf" ng-if="isWai">
+        <div class="subHeader">
+            <span class="dealerBrand"><span class="inner inner2">悄悄评论</span></span>
+        </div>
+
+        <div class="comment-items">
+            <div class="comment-item" ng-repeat="item in goodsComments">
+                <div class="comment-buyer">
+                    <div class="pic"><img lazy-img="{{item.userAvatar}}" alt="头像" /></div>
+                    <strong>{{item.userName}}</strong>
+                    <span>{{item.timestamp}}</span>
+                </div>
+                <div class="comment-info">
+                    {{item.content}}
+                </div>
+            </div>
+            <div class="noData" ng-if="!goodsComments.length">暂无评论，快去抢沙发~</div>
+        </div>
+        <a href="#/comment/goods/{{goodsItem.id}}" class="moreComment" ng-if="goodsComments.length>=3">查看更多评论</a>
+    </div>
+
+</div>

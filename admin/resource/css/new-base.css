@@ -1,0 +1,434 @@
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.text-muted{
+    color: #B9B9B9;
+}
+
+/* reset bootstrap */
+
+
+.textInput{
+    color: #858585;
+    background-color: #fff;
+    border: 1px solid #d5d5d5;
+    padding: 5px 4px 6px;
+    font-size: 14px;
+    line-height: 14px;
+    vertical-align: middle;
+}
+.textInput:focus{
+    color: #696969;
+    border-color: #f59942;
+    background-color: #fff;
+    outline: 0;
+}
+.subBtn{
+    padding: 8px;
+    display: inline-block;
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+    border-radius: 0;
+    -webkit-transition: all ease .15s;
+    -o-transition: all ease .15s;
+    transition: all ease .15s;
+    cursor: pointer;
+    vertical-align: middle;
+    border: 1px solid #428bca;
+    background-color: #428bca;
+}
+.subBtn:hover, .subBtn:focus, .subBtn.focus{
+    background-color: #428bca;
+    border-color: #3C7FB8;
+    color: #fff;
+    outline: 0;
+}
+.table{
+    margin-bottom: 0;
+}
+.dataTable .table{
+    border: 0 none;
+}
+
+
+/* 图标 */
+.icon-caret{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid \9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+
+.icon-down{
+    width: 10px;
+    height: 10px;
+    background: url(../images/icon-down.png) 0 center no-repeat;
+}
+.icon-right{
+    width: 10px;
+    height: 10px;
+    background: url(../images/icon-right.png) 0 center no-repeat;
+}
+
+.icon-down,
+.icon-right{
+    display: inline-block;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+
+
+/*
+ * 上传图片
+ */
+
+.upload-pics { }
+.upload-pics .title {
+    line-height: 2;
+    font-size: 14px;
+    color: #666;
+}
+.take-notes-page .loaded-pics,
+.take-notes-page .upload-pic {
+    display: inline-block;
+}
+.upload-pics .pics {  }
+.upload-pics .img {
+    display: inline-block;
+    width: 60px;
+    margin-right: 12px;
+    vertical-align: middle;
+}
+.upload-pics .note-pic-loading {
+    height: 60px;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.upload-pics .fakeUploadClick,
+.upload-pics .upload-focus {
+    height: 60px;
+    width: 60px;
+    background: url(../images/upload-plus-dashed_301.png) no-repeat center;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+.upload-pics:active .upload-focus {
+    background-color: #e7e7e7;
+}
+
+
+
+
+/* 公共样式 */
+.wrap{}
+.header{
+    background: #368ee0;
+    position: relative;
+    z-index: 100;
+    height: 40px;
+}
+.header .logo{
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    color: #ffffff;
+    margin-right: 20px;
+    padding-left: 10px;
+}
+.header .menu{
+    float: left;
+}
+.header .menu li{
+    float: left;
+}
+.header .menu li a{
+    padding: 0 10px;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+}
+.header .menu li a.on{
+    background-color: #fff;
+    color: #333;
+}
+
+.header .userCont{
+    float: right;
+    position: relative;
+}
+.header .userCont .userHandle{
+    height: 40px;
+    overflow: hidden;
+    padding: 0 10px 0 3px;
+    background-color: #5BA1E2;
+    cursor: pointer;
+}
+.header .userCont .pic{
+    float: left;
+    padding: 3px;
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+}
+.header .userCont .pic img{
+    width: 100%;
+    height: 100%;
+}
+.header .userCont .cont{
+    float: left;
+    padding-top: 5px;
+    line-height: 1.4;
+    color: #fff;
+    font-size: 12px;
+}
+.header .userCont .icon-caret{
+    margin-top: 18px;
+    color: #fff;
+}
+.header .userCont .cont ul{}
+.header .userCont .cont li{}
+.header .userCont .cont a{}
+.header .userCont .userOpCont{
+    position: absolute;
+    right: 0;
+    top: 40px;
+    width: 116px;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.15);
+    border-top: 0 none;
+    box-shadow: 0 2px 4px rgba(0,0,0,.2);
+}
+.header .userCont .userOpCont li{}
+.header .userCont .userOpCont li a{
+    display: block;
+    padding: 5px 10px;
+    color: #333;
+}
+.header .userCont .userOpCont a:hover{
+    background: #fee188;
+}
+
+
+.orderPage{
+    padding: 10px;
+}
+.orderPage .selectOrder{
+    padding-bottom: 10px;
+}
+.orderPage .selectOrder .textInput{
+    margin-right: 10px;
+    width: 150px;
+}
+.orderPage .selectOrder .subBtn{
+    padding: 5px;
+}
+.orderPage .selectOrder >*{
+    float: left;
+}
+
+.orderPage .subMenu{
+    margin-bottom: 10px;
+    border-bottom: 1px solid #dbdbdb;
+}
+.orderPage .subMenu ul{
+    padding-left: 10px;
+}
+.orderPage .subMenu li{
+    position: relative;
+    float: left;
+    margin-right: 8px;
+}
+.orderPage .subMenu li a{
+    display: block;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 20px;
+    border: 1px solid #ddd;
+    border-bottom: 0 none;
+    background-color: #fff;
+}
+.orderPage .subMenu li.on{
+    top: 1px;
+}
+.orderPage .subMenu li.on a{
+    border-color: #c5d0dc #c5d0dc transparent;
+    border-top: 2px solid #4c8fbd;
+}
+
+.orderTables{
+    border: 1px solid #ddd;
+}
+.orderTables .table{
+    width: 100%;
+    text-align: center;
+}
+.orderTables .table thead{
+    background-color: #5792c9;
+    line-height: 32px;
+    color: #fff;
+}
+.orderTables .table tbody{
+    line-height: 1.4
+}
+.orderTables .table tbody td{
+    padding: 5px 0;
+}
+.orderTables .table tbody tr:nth-child(2){
+    background-color: #eee;
+}
+.orderTables .table tbody tr:hover{
+    background-color: #dbe8f4;
+}
+.orderTables .tFooter{
+    overflow: hidden;
+    padding: 5px;
+    border-top: 1px solid #ddd;
+    background-color: #EFF3F8;
+}
+.orderTables .tFooter .pageInfo{
+    padding-top: 8px;
+}
+.orderTables .tFooter .pageOp{
+    float: right;
+}
+.orderTables .textInput{
+    width: 50px;
+}
+.orderTables .img{
+    display: inline-block;
+}
+
+.content{
+    background-color: #eee;
+}
+.content .slide{
+    width: 160px;
+    float: left;
+
+}
+.slide li a{
+    height: 32px;
+    line-height: 32px;
+    text-align: left;
+    display: block;
+    padding-right: 10px;
+}
+.slide .parentUl{
+    padding-left: 10px;
+}
+.slide .childrenUl{
+    padding-left: 20px;
+}
+.slide .childrenUl .subItem{
+    padding-left: 8px;
+}
+.slide .parentLi.on .item{
+    color: #487ac3;
+}
+.slide .childrenLi.on .subItem{
+    color: #487ac3;
+}
+.slide .icon{
+    float: left;
+    margin-top: 10px;
+    margin-right: 5px;
+    width: 10px;
+    height: 10px;
+}
+
+.slide li a:hover{
+    background-color: #e7e7e7;
+}
+
+.content .main{
+    overflow: hidden;
+    background-color: #fff;
+}
+
+
+/* 以下为内页详情 */
+.mainPart{
+    padding-top: 10px;
+}
+.page_title{
+    margin-bottom: 10px;
+    padding: 0 10px 10px;
+}
+.page_title .rightBox{
+    float: right;
+    /*padding-top: 5px;*/
+}
+.page_title .rightBox .navbar-form{
+    margin: 0;
+}
+.select{
+    -webkit-appearance: menulist-button;
+    border: 1px solid #d2d2d2;
+
+    padding: 5px 10px;
+    font-size: 12px;
+    height: 30px;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+
+.page_cont{
+    margin-bottom: 10px;
+    padding: 0 10px 10px;
+}
+
+
+/* 广告管理 */
+
+.bannerManageBox{}
+.bannerManageBox li{
+    width: 33%;
+    float: left;
+    padding: 15px;
+}
+.bannerManageBox .pic{
+    margin-bottom: 10px;}
+.bannerManageBox .pic img{
+    width: 100%;
+    height: 200px;
+}
+.bannerManageBox .toolBar{
+    padding: 10px 0;
+}
+.bannerManageBox .toolBar a{
+    margin: 0 10px;
+}
+.bannerManageBox .toolBar a:hover{
+    color: #3f66a8;
+}
+
+
+/* 用户管理 */
+.hotelDetail .imgList{
+    padding-top: 5px;
+}
+.hotelDetail .imgList li{
+    float: left;
+    margin-right: 5px;
+    border: 1px solid #d2d2d2;
+}
+.hotelDetail .imgList li img{
+    width: 60px;
+    height: 60px;
+}
+.newHotelPage{
+    padding: 0 20px;
+}
+.newHotelPage .form-group .col-lg-1{
+    padding: 13px 0 0;
+
+}
