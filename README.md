@@ -4,13 +4,13 @@ jozhi.github.com
 大大大，大志的记事本
 
 ##脚本和其他
-[同源策略（以及跨域方案）](https://github.com/jozhi/jozhi.github.com/issues/9)
+-[同源策略（以及跨域方案）](https://github.com/jozhi/jozhi.github.com/issues/9)
 
-[关于 AJAX](https://github.com/jozhi/jozhi.github.com/issues/8)
+-[关于 AJAX](https://github.com/jozhi/jozhi.github.com/issues/8)
 
-[从输入URL到页面加载完成的过程中都发生了什么事情？](https://github.com/jozhi/jozhi.github.com/issues/7)
+-[从输入URL到页面加载完成的过程中都发生了什么事情？](https://github.com/jozhi/jozhi.github.com/issues/7)
 
-[WEB前端性能优化小结](https://github.com/jozhi/jozhi.github.com/issues/6)
+-[WEB前端性能优化小结](https://github.com/jozhi/jozhi.github.com/issues/6)
 
 
 ##样式和布局
