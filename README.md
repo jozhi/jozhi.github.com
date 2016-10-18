@@ -6,6 +6,13 @@ jozhi.github.com
 
 
 ##脚本和其他
+
+ - [http/2.0与http/1.1区别](https://github.com/jozhi/jozhi.github.com/issues13)
+
+ - [传统轮询、长轮询、服务器发送事件与WebSocket](https://github.com/jozhi/jozhi.github.com/issues12)
+ 
+ - [关于柯里化](https://github.com/jozhi/jozhi.github.com/issues/11)
+ 
  - [同源策略（以及跨域方案）](https://github.com/jozhi/jozhi.github.com/issues/9)
 
  - [关于 AJAX](https://github.com/jozhi/jozhi.github.com/issues/8)
