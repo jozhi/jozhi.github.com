@@ -66,46 +66,15 @@
   <script src="jquery.min.js"></script>
   <script>
     $(function () {
-      function exportMap() {
-
-        var mapElem = document.getElementById('map'); // the id of your map div here
-
-        // html2canvas not able to render css transformations (the container holding the image tiles uses a transform)
-        // so we determine the values of the transform, and then apply them to TOP and LEFT 
-        // var transform = $(".gm-style>div:first>div").css("transform");
-        // var comp = transform.split(","); //split up the transform matrix
-        // var mapleft = parseFloat(comp[4]); //get left value
-        // var maptop = parseFloat(comp[5]); //get top value
-        // $(".gm-style>div:first>div").css({ //get the map container. not sure if stable
-        //   "transform": "none",
-        //   "left": mapleft,
-        //   "top": maptop,
-        // });
-
-        html2canvas(mapElem, {
-          useCORS: true,
-          onrendered: function (canvas) {
-            mapImg = canvas.toDataURL('image/png');
-
-          document.body.appendChild(canvas)
-
-            // do something here with your mapImg
-            // e.g. I then use the dataURL in a pdf using jsPDF...
-            // createPDFObject();
-          }
-        });
-      }
 
       $('#button').on('click', function () {
         html2canvas(document.querySelector("#map"),{
             useCORS : true,
-            foreignObjectRendering : true,
-            allowTaint :true
+            allowTaint :false
         })
         .then(canvas => {
           document.body.appendChild(canvas)
         });
-        // exportMap()
       })
     })
   </script>
