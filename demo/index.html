@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>OpenLayers 2 Boxes Example</title>
+  <link rel="stylesheet" href="df_style.css" type="text/css">
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <script src="OpenLayers.js"></script>
+  <script type="text/javascript">
+    var box_extents = [
+      [-10, 50, 5, 60],
+      [-75, 41, -71, 44],
+      [-122.6, 37.6, -122.3, 37.9],
+      [10, 10, 20, 20]
+    ];
+    var map;
+
+    function init() {
+      map = new OpenLayers.Map('map');
+
+      var ol_wms = new OpenLayers.Layer.WMS("OpenLayers WMS",
+        "http://vmap0.tiles.osgeo.org/wms/vmap0?", {
+          layers: 'basic'
+        });
+
+      var boxes = new OpenLayers.Layer.Boxes("Boxes");
+
+      for (var i = 0; i < box_extents.length; i++) {
+        ext = box_extents[i];
+        bounds = OpenLayers.Bounds.fromArray(ext);
+        box = new OpenLayers.Marker.Box(bounds);
+        box.events.register("click", box, function (e) {
+          this.setBorder("yellow");
+        });
+        boxes.addMarker(box);
+      }
+
+      map.addLayers([ol_wms, boxes]);
+      map.addControl(new OpenLayers.Control.LayerSwitcher());
+      map.zoomToMaxExtent();
+    }
+  </script>
+</head>
+
+<body onload="init()">
+  <h1 id="title">Boxes Example</h1>
+
+  <div id="tags">
+    box, annotation
+  </div>
+
+  <p id="shortdesc">
+    Demonstrate marker and box type annotations on a map.
+  </p>
+
+  <div id="map" class="smallmap"></div>
+
+  <div id="docs"></div>
+
+  <button type="button" id="button">button</button>
+
+  <script src="html2canvas.min.js"></script>
+  <script src="jquery.min.js"></script>
+  <script>
+    $(function () {
+      function exportMap() {
+
+        var mapElem = document.getElementById('map'); // the id of your map div here
+
+        // html2canvas not able to render css transformations (the container holding the image tiles uses a transform)
+        // so we determine the values of the transform, and then apply them to TOP and LEFT 
+        // var transform = $(".gm-style>div:first>div").css("transform");
+        // var comp = transform.split(","); //split up the transform matrix
+        // var mapleft = parseFloat(comp[4]); //get left value
+        // var maptop = parseFloat(comp[5]); //get top value
+        // $(".gm-style>div:first>div").css({ //get the map container. not sure if stable
+        //   "transform": "none",
+        //   "left": mapleft,
+        //   "top": maptop,
+        // });
+
+        html2canvas(mapElem, {
+          useCORS: true,
+          onrendered: function (canvas) {
+            mapImg = canvas.toDataURL('image/png');
+
+          document.body.appendChild(canvas)
+
+            // do something here with your mapImg
+            // e.g. I then use the dataURL in a pdf using jsPDF...
+            // createPDFObject();
+          }
+        });
+      }
+
+      $('#button').on('click', function () {
+        html2canvas(document.querySelector("#map"),{
+            useCORS : true,
+            foreignObjectRendering : true,
+            allowTaint :false
+        })
+        .then(canvas => {
+          document.body.appendChild(canvas)
+        });
+        // exportMap()
+      })
+    })
+  </script>
+</body>
+
+</html>
