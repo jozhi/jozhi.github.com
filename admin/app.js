@@ -19,7 +19,7 @@ app.use(function(req, res, next) {  //404错误处理
     next(err);
 });
 
-app.use(function(err, req, res, next) {//处理500错误
+app.use(function(err, req, res, next){//处理500错误
     res.status(err.status || 500);
     res.render('error', {
         message: err.message,
