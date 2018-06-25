@@ -100,7 +100,7 @@
         html2canvas(document.querySelector("#map"),{
             useCORS : true,
             foreignObjectRendering : true,
-            allowTaint :false
+            allowTaint :true
         })
         .then(canvas => {
           document.body.appendChild(canvas)
