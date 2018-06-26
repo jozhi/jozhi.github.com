@@ -6,9 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <title>OpenLayers 2 Boxes Example</title>
-  <link rel="stylesheet" href="df_style.css" type="text/css">
-  <link rel="stylesheet" href="style.css" type="text/css">
-  <script src="OpenLayers.js"></script>
+  <link rel="stylesheet" href="./df_style.css" type="text/css">
+  <link rel="stylesheet" href="./style.css" type="text/css">
+  <script src="./OpenLayers.js"></script>
+  <script src="./canvas2image.js"></script>
   <script type="text/javascript">
     var box_extents = [
       [-10, 50, 5, 60],
@@ -51,31 +52,62 @@
   <div id="tags">
     box, annotation
   </div>
-
   <p id="shortdesc">
     Demonstrate marker and box type annotations on a map.
   </p>
-
   <div id="map" class="smallmap"></div>
 
   <div id="docs"></div>
 
-  <button type="button" id="button">生成图片</button>
+  <button type="button" id="convert">生成图片</button>
+  <button type="button" id="save">保存图片</button>
+  <div class="inner" id="inner"></div>
 
   <script src="html2canvas.min.js"></script>
   <script src="jquery.min.js"></script>
   <script>
     $(function () {
+      var $inner = $('#inner')
+      var $shortdesc = $('#shortdesc')
 
-      $('#button').on('click', function () {
-        html2canvas(document.querySelector("#map"),{
+
+      function downloadFile(fileName, content){
+          var aLink = document.createElement('a');
+          var blob = new Blob([content]);
+          var evt = document.createEvent("HTMLEvents");
+          evt.initEvent("click", false, false);//initEvent 不加后两个参数在FF下会报错, 感谢 Barret Lee 的反馈
+          aLink.download = fileName;
+          aLink.href = URL.createObjectURL(blob);
+          aLink.dispatchEvent(evt);
+
+          console.log(blob)
+          console.log(aLink)
+      }
+
+      function convert(type){
+        $inner.empty()
+        html2canvas($shortdesc[0],{
             useCORS : true,
             allowTaint :true
         })
         .then(canvas => {
-          document.body.appendChild(canvas)
+          console.log(canvas)
+          $inner.append(canvas)
+        
+          // OpenLayers 生成的 canvas 无法下载，会报错。
+          if(type){
+            Canvas2Image.saveAsImage(canvas, $shortdesc.width(), $shortdesc.height(), 'png');
+          }
         });
+      }
+
+      $('#convert').on('click', function () {
+        convert()
       })
+      $('#save').on('click', function () {
+        convert('save')
+      })
+
     })
   </script>
 </body>
