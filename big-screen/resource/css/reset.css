@@ -1,0 +1,31 @@
+﻿@charset "utf-8";
+
+*{ border:0; margin:0; padding:0; font-size:14px;box-sizing: border-box;}
+/*html,body { height: 100%; background: #fafafa;}*/
+/*html,body { height: 100%; }*/
+
+b,strong { font-weight: bold;}
+img {color: transparent;font-size: 0;vertical-align: middle;-ms-interpolation-mode: bicubic;}
+li{display: list-item;list-style: none;}
+table{*border-collapse: collapse;border-spacing: 0;}
+th,td,caption {font-weight: normal;vertical-align: top;text-align: left;}
+body{
+  margin:0 auto;padding:0;
+  color: #333;
+  font:normal 14px "",'\5B8B\4F53',arial,tahoma,helvetica,sans-serif;
+  font-family:'microsoft yahei';
+  font-family:'Microsoft YaHei Light';
+}
+input,button,select,.ui-widget select{font-family:'microsoft yahei';}
+a,input,button,select,textarea{outline:none}
+input,button,textarea{resize:none}
+/* the default style for the link */
+
+a{text-decoration:none; color: #333; }
+a:hover{text-decoration:none;}
+
+.cf:before, .cf:after {content:"";display:table;}
+.cf:after {clear:both;}
+.cf {zoom:1;}
+.clear{width:0;height:0;clear:both;overflow:hidden;}
+/* reset style */

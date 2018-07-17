@@ -1,0 +1,350 @@
+@charset "utf-8";
+/* CSS Document */
+.fll{
+  float: left;
+}
+
+.flr{
+  float: right;
+}
+.posr{
+  position: relative;
+}
+
+.bgc_1{ background-color: #ff7a74;}
+.color_1{ color: #ff7a74 !important;}
+
+.bgc_2{ background-color: #7cb7ff;}
+.color_2{ color: #7cb7ff !important;}
+
+.bgc_3{ background-color: #ffbf64;}
+.color_3{ color: #ffbf64 !important;}
+
+.bgc_4{ background-color: #8aea7d;}
+.color_4{ color: #8aea7d !important;}
+
+.bgc_5{ background-color: #b294fe;}
+.color_5{ color: #b294fe !important;}
+
+
+
+.slideMod{ }
+.slideMod .tit{
+  padding:15px 20px 20px;
+}
+.slideMod .tit .icon{
+  margin-right:4px;
+  width:4px;
+  height:16px;
+}
+.slideMod .tit strong{
+  font-size:16px;
+  color: #fff;
+  line-height:1;
+}
+.slideMod .cont{
+  padding:0 21px;
+}
+
+.illustrated{}
+.illustrated .red{
+  color: #ff7a74;
+}
+.illustrated .blue{
+  color: #7cb7ff;
+}
+
+.illustrated .pic{
+  float: right;
+  width:120px;
+  height:120px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+.illustrated .pic img{
+  max-width:120px;
+  max-height:120px;
+}
+.illustrated .ul{}
+.illustrated .ul li{
+  line-height:24px;
+}
+.illustrated .ul strong{
+  color: #999;
+  font-weight: normal;
+}
+.illustrated .ul span{
+  color: #fff;
+}
+
+.illustrated2 .pic{
+  float: left;
+  width:72px;
+  height:90px;
+  margin-right:10px;
+}
+.illustrated2 .pic img{
+  max-width:72px;
+  max-height:90px;
+}
+.illustrated2 .ul{}
+.illustrated2 .ul li{
+  color: #fff;
+  line-height:24px;
+}
+.illustrated2 .ul li .name{
+  font-size:16px;
+  color: #fff;
+}
+.illustrated2 .ul li .phoneNumber{
+  color: #8aea7d;
+}
+
+.bs_dialog{
+  position: absolute;
+  z-index:9;
+
+  display: none;
+}
+.bs_dialog.profile{
+  margin-top: -245px;
+  margin-left:-145px;
+
+  width:290px;
+  height:190px;
+}
+.bs_dialog.profile .cont{
+  padding:10px 10px 15px;
+  height:165px;
+}
+.bs_dialog .liningCloth{
+  background-color: rgba(27, 44, 66, 0.8);
+  border-radius: 5px;
+}
+.bs_dialog .title{
+  margin:0 10px;
+  height:30px;
+  line-height:30px;
+  border-bottom: 1px solid #999;
+}
+.bs_dialog .title .close{
+  cursor: pointer;
+  margin-top:1px;
+  float: right;
+  width:28px;
+  height:28px;
+  background: url(../images/icon_clone.png) center no-repeat;
+}
+.bs_dialog .title strong{
+  color: #fff;
+  font-size:14px;
+}
+.bs_dialog .illustrated2{
+  padding-bottom:16px;
+}
+.bs_dialog .btns{
+  text-align: center;
+}
+.bs_dialog .btns .btnDown{
+  position: relative;
+  margin-right:15px;
+  width:115px;
+  height:26px;
+  text-align: center;
+  color: #ccc;
+  padding-top:2px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+.bs_dialog .btns .btnDown a{
+  color: #ccc;
+}
+.bs_dialog .btns .icon_down{}
+.bs_dialog .btns .btnDown ul{
+  position: absolute;
+  top: 23px;
+  left: 0;
+  width: 100%;
+  display: none;
+  margin-top: 2px;
+  line-height: 2;
+  padding: 5px 0;
+  background-color: rgba(27, 44, 66, 0.8);
+  border-radius: 5px;
+}
+.bs_dialog .btns .btnDown li{
+  cursor: pointer;
+}
+.bs_dialog .btns .btn{
+  width:115px;
+  height:26px;
+  text-align: center;
+  line-height:26px;
+  border-radius: 15px;
+  background-color: #0085fa;
+  color: #fff;
+}
+.bs_dialog .bg_dialogArrow{
+  margin:0 auto;
+  width:12px;
+  height:6px;
+  background: url(../images/bg_dialogArrows.png) center no-repeat;
+}
+
+
+.videoDialogue{
+  width:800px;
+  height:480px;
+  top:50%;
+  left:50%;
+
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.videoDialogue .cont{
+  padding: 10px 10px 15px;
+}
+.videoDialogue .videoWrap{
+  float: left;
+  width:480px;
+  height:430px;
+  background-color: #fff;
+}
+.videoDialogue .videoWrap .media{
+  width:100%;
+  height:100%;
+  background-color: #000;
+}
+.videoDialogue .dialogueWrap{
+  float: right;
+  width:290px;
+  height:430px;
+  background-color: #1b2c42;
+}
+.videoDialogue .dialogueList{
+  padding:10px;
+  height:330px;
+  border-bottom: 1px solid #495668;
+  overflow-y: auto;
+}
+.videoDialogue .dialogueList .item{
+  margin-bottom:15px;
+  /*vertical-align: top;*/
+}
+.videoDialogue .dialogueList .item *{
+  font-size:0;
+}
+.videoDialogue .dialogueList .item .tit{
+  margin-bottom:5px;
+}
+.videoDialogue .dialogueList .item .dl_pic{
+  position: relative;
+  vertical-align: top;
+  margin-top:2px;
+  width:36px;
+  height:36px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.videoDialogue .dialogueList .item .dl_pic img{
+  position: absolute;
+  max-width:36px;
+  top:50%;
+  left:50%;
+
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.videoDialogue .dialogueList .item .dl_cont{}
+.videoDialogue .dialogueList .tit{
+  font-size:12px;
+  color: #eee;
+}
+.videoDialogue .dialogueList .conversation{
+  border-radius: 3px;
+  font-size:12px;
+  color: #fff;
+  line-height:1.2;
+  padding:10px;
+  width: 158px;
+}
+
+.videoDialogue .dialogueList .left{
+  padding-right:48px;
+}
+.videoDialogue .dialogueList .left .conversation{
+  background-color: #4b5e76;
+}
+.videoDialogue .dialogueList .left .icon{
+  height:34px;
+  width:7px;
+  background: url(../images/popupTriangleLeft.png) center no-repeat;
+}
+
+.videoDialogue .dialogueList .right{
+  text-align: right;
+  padding-left:48px;
+}
+.videoDialogue .dialogueList .right .conversation{
+  background-color: #0b51ac;
+}
+.videoDialogue .dialogueList .right .icon{
+  height:34px;
+  width:7px;
+  background: url(../images/popupTriangleRight.png) center no-repeat;
+}
+
+.videoDialogue .submit{
+  height:100px;
+  padding:6px 10px 0;
+  text-align: right;
+}
+.videoDialogue .submit textarea{
+  margin-bottom:6px;
+  display: block;
+  height:55px;
+  width:100%;
+  border:0 none;
+  padding:0 5px;
+  color: #fff;
+  line-height:1.3;
+  background-color: transparent;
+}
+.videoDialogue .submit .button{
+  width:80px;
+  height:26px;
+  line-height:26px;
+  color: #fff;
+  background-color: #0085fa;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+
+.viewVideo{
+  width:600px;
+  height:480px;
+  top:50%;
+  left:50%;
+
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.viewVideo .cont{
+  padding: 10px 10px 15px;
+}
+.viewVideo .videoWrap{
+  float: left;
+  width:580px;
+  height:430px;
+  background-color: #fff;
+}
+.viewVideo .videoWrap .media{
+  width:100%;
+  height:100%;
+  background-color: #000;
+}
